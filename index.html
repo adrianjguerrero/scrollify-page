@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+            
+    </head>
+    <body>
+      <div class="example-classname"></div>
+      <div class="example-classname"></div>
+        <style>
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                touch-action: none;
+            }
+
+            .secciones{
+                height: 100vh;
+                width: 100%;
+                background: red;
+            }
+
+            .container-phone{
+                position: fixed;
+                height: 480px;
+                overflow: hidden;
+            }
+
+            .container-phone .iphone{
+                
+                width: 640px;
+                height: 480px;
+                object-fit: contain;
+                position: relative;
+                z-index: 10;
+            }
+
+            .container-phone .slides{
+                overflow: hidden;
+                transform: translateY(-576px);
+                transition: transform 0.3s ease;
+                position: relative;
+                z-index: 5;                
+            }
+
+            .container-phone .slides img{
+                
+                display: block;
+                width: 640px;
+                height: 480px;
+                object-fit: contain;
+            }
+        </style>
+    
+        <div class="container">
+           <div class="container-phone">
+               <img src="IPhone_X.png" alt="iphone" class="iphone"> 
+
+               <div class="slides">
+                   <img src="0.jpg" alt="slide">
+                   <img src="1.jpg" alt="slide">
+                   <img src="2.jpg" alt="slide">
+               </div>
+            </div>
+
+          <section class="secciones">Seccion 1</section>
+          <section class="secciones">Seccion 2</section>
+          <section class="secciones">Seccion 3</section>
+
+        </div>
+
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="jquery.scrollify.js"></script>
+      <script>
+        $(function() {
+          $.scrollify({
+            section : ".secciones",
+            overflowScroll: true,
+            before: function(){
+                var offset = $.scrollify.current().offset().top;
+                console.log(offset);
+                $('.container-phone .slides').css('transform','translateY(-'+offset+'px)');
+            }
+          });
+        });
+      </script>
+    </body>
+  </html>
