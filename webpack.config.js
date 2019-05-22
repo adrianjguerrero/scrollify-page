@@ -4,7 +4,7 @@ const OptimizeCssAsset = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
-var WebpackNotifierPlugin = require('webpack-notifier');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 
 module.exports = {
