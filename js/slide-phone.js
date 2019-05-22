@@ -2,6 +2,7 @@ $(function() {
     $.scrollify({
       section : ".secciones",
       overflowScroll: true,
+      easing: 'swing',
       before: function(){
         $('.secciones').each(function(idx,element){
           if(element == $.scrollify.current()[0]){

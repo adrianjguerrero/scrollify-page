@@ -31,8 +31,8 @@ body{
 
     .slides{
         overflow: hidden;
-        transform: translateY(-576px);
-        transition: transform 0.3s ease;
+        transform: translateY(-480px);
+        transition: transform 1s ease-in-out;
         position: relative;
         z-index: 5;        
         
