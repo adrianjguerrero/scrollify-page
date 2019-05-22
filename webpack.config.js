@@ -22,9 +22,11 @@ module.exports = {
   },
   watch: true,
   module: {
-    rules: [{
-        test: /\.scss$/, use:[MiniCssExtractPlugin.loader,'css-loader','postcss-loader','sass-loader'],
-        }]
+    rules: [
+        {test: /\.scss$/, use:[MiniCssExtractPlugin.loader,'css-loader','postcss-loader','sass-loader']},
+        {test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+          loader: 'url-loader?limit=1000000'} 
+        ]
     },
     plugins : [new MiniCssExtractPlugin(),
       new WebpackNotifierPlugin(),

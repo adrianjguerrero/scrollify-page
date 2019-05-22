@@ -5,10 +5,14 @@
     touch-action: none;
 }
 
+body{
+    background: url('../img/asfalt.png') repeat fixed;
+}
+
 .secciones{
     height: 100vh;
     width: 100%;
-    background: red;
+    // background: red;
 }
 
 .container-phone{
@@ -38,6 +42,7 @@
             width: 210px;
             height: 480px;
             margin-left: 215px;
+            border-radius: 43px;
         }
     }
 }
